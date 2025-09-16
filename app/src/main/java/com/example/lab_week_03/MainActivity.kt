@@ -6,6 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.FragmentContainerView
 
 interface CoffeeListener {
     fun onSelected(id:Int)
@@ -20,15 +21,32 @@ class MainActivity : AppCompatActivity(), CoffeeListener {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        if(savedInstanceState == null){
+            findViewById<FragmentContainerView>(R.id.fragment_container).let{
+                containerLayout ->
+                    val listFragment = ListFragment()
+                    supportFragmentManager.beginTransaction()
+                        .add(containerLayout.id, listFragment)
+                        .commit()
+            }
+        }
 
         Log.d(TAG, "onCreate")
     }
 
     override fun onSelected(id: Int) {
-        val detailFragment = supportFragmentManager
-            .findFragmentById(R.id.fragment_detail)
-        as DetailFragment
-        detailFragment.setCoffeeData(id)
+//        val detailFragment = supportFragmentManager
+//            .findFragmentById(R.id.fragment_detail)
+//        as DetailFragment
+//        detailFragment.setCoffeeData(id)
+        findViewById<FragmentContainerView>(R.id.fragment_container).let{
+            containerLayout ->
+                val detailFragment = DetailFragment.newInstance(id)
+                supportFragmentManager.beginTransaction()
+                    .replace(containerLayout.id, detailFragment)
+                    .addToBackStack(null)
+                    .commit()
+        }
     }
 
     override fun onStart() {
