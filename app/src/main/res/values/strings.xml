@@ -7,6 +7,10 @@
     <string name="americano_desc" translatable="false">Espresso with added hot water (100–150 ml). Often served in a cappuccino cup. (The espresso is added into the hot water rather than all the water being flowed through the coffee that would lead to over extraction.)</string>
     <string name="latte_title" translatable="false">CAFFE LATTE</string>
     <string name="latte_desc" translatable="false">A tall, mild \'milk coffee\' (about 150–300 ml). An espresso with steamed milk and only a little milk foam poured over it. Serve in a latte glass or a coffee cup. Flavored syrup can be added.</string>
+    <string name="mocha_title">MOCHA</string>
+    <string name="mocha_desc">A chocolate-flavored coffee drink made with espresso, steamed milk, and cocoa or chocolate syrup. Often topped with whipped cream and dusted with cocoa powder. Serve in a latte glass or a cappucino cup.</string>
+    <string name="frappe_title">FRAPPE</string>
+    <string name="frappe_desc">A blended iced coffee made with espresso, milk, sugar, and ice, creating a creamy and refreshing texture. Often serve with whipped cream and flavored syrup such as caramel or chocolate. Best enjoy in a tall glass.</string>
     <string name="coffee_list" translatable="false">Coffee List</string>
 
 </resources>
